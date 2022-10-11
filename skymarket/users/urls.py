@@ -5,7 +5,7 @@ from rest_framework.routers import SimpleRouter
 # TODO для этокого рекоммендуется использовать SimpleRouter
 
 user_router = SimpleRouter()
-user_router.register("users", UserViewSet, basename="users")
+user_router.register("api/users", UserViewSet, basename="users")
 
 urlpatterns = [
     path("", include(user_router.urls))

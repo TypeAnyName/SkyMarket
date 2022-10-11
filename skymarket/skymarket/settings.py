@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "ads",
     "redoc",
     "corsheaders",
+    "django_filters",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -85,6 +87,13 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "SkyMarket API",
+    "DESCRIPTION": "Bokov SkyMarket API",
+
 }
 
 AUTH_USER_MODEL = "users.User"

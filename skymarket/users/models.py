@@ -39,3 +39,13 @@ class User(AbstractBaseUser):
 
     def __str__(self):
         return self.email
+
+    @property
+    def is_staff(self):
+        return self.is_admin
+
+    def has_perm(self, perm, obj=None):
+        return self.is_admin
+
+    def has_module_perms(self, app):
+        return self.is_admin
